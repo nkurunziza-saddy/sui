@@ -14,7 +14,7 @@ import {
   AlertDialogHeader,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { LoadingSwap } from "@/registry/new-york/blocks/loading-swap";
+import { LoadingSwap } from "@/registry/new-york/blocks/loading-swap/loading-swap";
 
 export function ActionButton({
   action,

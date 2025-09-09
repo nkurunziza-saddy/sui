@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { LoadingSwap } from "../../../registry/new-york/blocks/loading-swap/index";
+import { LoadingSwap } from "../../../registry/new-york/blocks/loading-swap/loading-swap";
 import { Button } from "@/components/ui/button";
 
 export function LoadingSwapExample() {

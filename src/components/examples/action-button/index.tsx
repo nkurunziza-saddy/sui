@@ -1,7 +1,7 @@
 "use client";
 
 import { toast } from "sonner";
-import { ActionButton } from "../../../registry/new-york/blocks/action-button";
+import { ActionButton } from "../../../registry/new-york/blocks/action-button/action-button";
 
 export function ActionButtonExample() {
   const handleAction = async () => {

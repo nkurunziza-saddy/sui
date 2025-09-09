@@ -19,6 +19,6 @@
     "hooks": "@/hooks"
   },
   "registries": {
-    "nsui": "https://nsui.vercel.app/r/{name}.json"
+    "@nsui": "https://nsui.vercel.app/r/{name}.json"
   }
 }
