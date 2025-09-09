@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "acme",
-  "homepage": "https://acme.com",
+  "name": "nsui",
+  "homepage": "https://nsui.vercel.app",
   "items": [
     {
       "name": "example-form",
@@ -12,7 +12,7 @@
       "registryDependencies": ["button", "input", "label", "textarea", "card"],
       "files": [
         {
-          "path": "registry/new-york/blocks/form/index.tsx",
+          "path": "src/registry/new-york/blocks/form/index.tsx",
           "type": "registry:component"
         }
       ]
@@ -25,7 +25,7 @@
       "registryDependencies": ["button", "alert-dialog", "loading-swap"],
       "files": [
         {
-          "path": "registry/new-york/blocks/action-button/index.tsx",
+          "path": "src/registry/new-york/blocks/action-button/index.tsx",
           "type": "registry:component"
         }
       ]
@@ -108,143 +108,143 @@
 
       "files": [
         {
-          "path": "registry/new-york/blocks/editor/index.tsx",
+          "path": "src/registry/new-york/blocks/editor/index.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/components/index.ts",
+          "path": "src/registry/new-york/blocks/editor/components/index.ts",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/components/image-dialog.tsx",
+          "path": "src/registry/new-york/blocks/editor/components/image-dialog.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/components/link-dialog.tsx",
+          "path": "src/registry/new-york/blocks/editor/components/link-dialog.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/components/table-dialog.tsx",
+          "path": "src/registry/new-york/blocks/editor/components/table-dialog.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/components/theme-toggler.tsx",
+          "path": "src/registry/new-york/blocks/editor/components/theme-toggler.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/components/toolbar-separator.tsx",
+          "path": "src/registry/new-york/blocks/editor/components/toolbar-separator.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/lib/colors.ts",
+          "path": "src/registry/new-york/blocks/editor/lib/colors.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/new-york/blocks/editor/lib/configs.ts",
+          "path": "src/registry/new-york/blocks/editor/lib/configs.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/new-york/blocks/editor/lib/editor-theme/index.ts",
+          "path": "src/registry/new-york/blocks/editor/lib/editor-theme/index.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/new-york/blocks/editor/lib/hooks/use-floating-toolbar.ts",
+          "path": "src/registry/new-york/blocks/editor/lib/hooks/use-floating-toolbar.ts",
           "type": "registry:hook"
         },
         {
-          "path": "registry/new-york/blocks/editor/lib/nodes/image-node.tsx",
+          "path": "src/registry/new-york/blocks/editor/lib/nodes/image-node.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/lib/nodes/index.ts",
+          "path": "src/registry/new-york/blocks/editor/lib/nodes/index.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/new-york/blocks/editor/lib/types/editor.ts",
+          "path": "src/registry/new-york/blocks/editor/lib/types/editor.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/new-york/blocks/editor/lib/utils/export.ts",
+          "path": "src/registry/new-york/blocks/editor/lib/utils/export.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/new-york/blocks/editor/lib/utils/import.ts",
+          "path": "src/registry/new-york/blocks/editor/lib/utils/import.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/new-york/blocks/editor/lib/utils/index.ts",
+          "path": "src/registry/new-york/blocks/editor/lib/utils/index.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/new-york/blocks/editor/plugins/floating-toolbar/index.tsx",
+          "path": "src/registry/new-york/blocks/editor/plugins/floating-toolbar/index.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/plugins/slash-command/index.tsx",
+          "path": "src/registry/new-york/blocks/editor/plugins/slash-command/index.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/plugins/slash-command/slash-command-items.ts",
+          "path": "src/registry/new-york/blocks/editor/plugins/slash-command/slash-command-items.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/new-york/blocks/editor/plugins/slash-command/slash-command-menu-item.tsx",
+          "path": "src/registry/new-york/blocks/editor/plugins/slash-command/slash-command-menu-item.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/plugins/table-hover-actions/index.tsx",
+          "path": "src/registry/new-york/blocks/editor/plugins/table-hover-actions/index.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/plugins/toolbar/index.tsx",
+          "path": "src/registry/new-york/blocks/editor/plugins/toolbar/index.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/plugins/toolbar/toolbar-items.ts",
+          "path": "src/registry/new-york/blocks/editor/plugins/toolbar/toolbar-items.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/align-buttons.tsx",
+          "path": "src/registry/new-york/blocks/editor/plugins/toolbar/extensions/align-buttons.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/block-format-dropdown.tsx",
+          "path": "src/registry/new-york/blocks/editor/plugins/toolbar/extensions/block-format-dropdown.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/block-type-buttons.tsx",
+          "path": "src/registry/new-york/blocks/editor/plugins/toolbar/extensions/block-type-buttons.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/color-picker.tsx",
+          "path": "src/registry/new-york/blocks/editor/plugins/toolbar/extensions/color-picker.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/file-actions.tsx",
+          "path": "src/registry/new-york/blocks/editor/plugins/toolbar/extensions/file-actions.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/history-buttons.tsx",
+          "path": "src/registry/new-york/blocks/editor/plugins/toolbar/extensions/history-buttons.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/insert-actions.tsx",
+          "path": "src/registry/new-york/blocks/editor/plugins/toolbar/extensions/insert-actions.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/list-buttons.tsx",
+          "path": "src/registry/new-york/blocks/editor/plugins/toolbar/extensions/list-buttons.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/table-buttons.tsx",
+          "path": "src/registry/new-york/blocks/editor/plugins/toolbar/extensions/table-buttons.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/text-format-buttons.tsx",
+          "path": "src/registry/new-york/blocks/editor/plugins/toolbar/extensions/text-format-buttons.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/toolbar-button.tsx",
+          "path": "src/registry/new-york/blocks/editor/plugins/toolbar/extensions/toolbar-button.tsx",
           "type": "registry:component"
         }
       ]
@@ -268,35 +268,35 @@
       ],
       "files": [
         {
-          "path": "registry/new-york/blocks/extensive-table/index.tsx",
+          "path": "src/registry/new-york/blocks/extensive-table/index.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/extensive-table/column.tsx",
+          "path": "src/registry/new-york/blocks/extensive-table/column.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/extensive-table/data-table.tsx",
+          "path": "src/registry/new-york/blocks/extensive-table/data-table.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/extensive-table/faceted-filter.tsx",
+          "path": "src/registry/new-york/blocks/extensive-table/faceted-filter.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/extensive-table/pagination.tsx",
+          "path": "src/registry/new-york/blocks/extensive-table/pagination.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/extensive-table/search.tsx",
+          "path": "src/registry/new-york/blocks/extensive-table/search.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/extensive-table/toolbar.tsx",
+          "path": "src/registry/new-york/blocks/extensive-table/toolbar.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/new-york/blocks/extensive-table/view-options.tsx",
+          "path": "src/registry/new-york/blocks/extensive-table/view-options.tsx",
           "type": "registry:component"
         }
       ]
@@ -308,7 +308,7 @@
       "description": "A utility component to swap content with a loading spinner.",
       "files": [
         {
-          "path": "registry/new-york/blocks/loading-swap/index.tsx",
+          "path": "src/registry/new-york/blocks/loading-swap/index.tsx",
           "type": "registry:component"
         }
       ]
