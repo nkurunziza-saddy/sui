@@ -22,7 +22,7 @@
       "type": "registry:component",
       "title": "Action Button",
       "description": "A button that performs an action, with support for loading states and confirmation dialogs.",
-      "registryDependencies": ["button", "alert-dialog", "loading-swap"],
+      "registryDependencies": ["button", "alert-dialog", "@nsui/loading-swap"],
       "files": [
         {
           "path": "src/registry/new-york/blocks/action-button/index.tsx",
