@@ -1,0 +1,116 @@
+---
+title: Products Table
+description: A data table with sorting, filtering, pagination, and column visibility controls.
+---
+
+import { ProductsTableExample } from "@/components/examples/extensive-table";
+
+A data table with sorting, filtering, pagination, and column visibility controls. Built with TanStack Table.
+
+## Installation
+
+```bash
+npx shadcn@latest add https://acme.com/r/products-table.json
+```
+
+## Usage
+
+<div className="my-4 p-4 border rounded-lg">
+  <ProductsTableExample />
+</div>
+
+The `ProductsTable` component is composed of several parts: the main data table, column definitions, and toolbar components.
+
+### 1. Define Columns
+
+Create a file to define the columns for your table.
+
+`src/registry/new-york/blocks/extensive-table/column.tsx`:
+
+```tsx
+"use client";
+
+import type { ColumnDef } from "@tanstack/react-table";
+
+// --- Example Type ---
+type Product = {
+  id: string;
+  name: string;
+  price: number;
+  category: string;
+  createdAt: string;
+};
+
+// --- Example Columns ---
+export const productColumns: ColumnDef<Product>[] = [
+  {
+    accessorKey: "name",
+    header: "Product Name",
+  },
+  {
+    accessorKey: "price",
+    header: "Price",
+    cell: ({ row }) => `$${row.original.price.toFixed(2)}`,
+  },
+  {
+    accessorKey: "category",
+    header: "Category",
+  },
+  {
+    accessorKey: "createdAt",
+    header: "Created At",
+    cell: ({ row }) => {
+      const date = new Date(row.original.createdAt);
+      return date.toLocaleDateString("en-US", {
+        month: "short",
+        day: "2-digit",
+        year: "numeric",
+      });
+    },
+  },
+];
+```
+
+### 2. Create the Table Component
+
+This component will fetch your data and pass it to the `DataTable` component.
+
+`src/registry/new-york/blocks/extensive-table/index.tsx`:
+
+```tsx
+import { productColumns } from "./column";
+import { DataTable } from "./data-table";
+
+// --- Example Data ---
+export const exampleProducts: Product[] = [
+  {
+    id: "1",
+    name: "Laptop",
+    price: 1200,
+    category: "Electronics",
+    createdAt: "2024-06-01",
+  },
+  // ... more products
+];
+
+export const ProductsTable = () => {
+  return <DataTable columns={productColumns} data={exampleProducts} />;
+};
+```
+
+### 3. Use the Component
+
+Now you can use the `ProductsTable` component in your application.
+
+```tsx
+import { ProductsTable } from "@/registry/new-york/blocks/extensive-table";
+
+export default function Page() {
+  return (
+    <div>
+      <h1 className="text-2xl font-bold mb-4">Products</h1>
+      <ProductsTable />
+    </div>
+  );
+}
+```

@@ -1,0 +1,120 @@
+---
+title: Example Form
+description: A form with client-side validation using react-hook-form and zod.
+---
+
+import { ExampleFormExample } from "@/components/examples/form";
+
+A form with client-side validation using `react-hook-form` and `zod`.
+
+## Installation
+
+```bash
+npx shadcn@latest add https://acme.com/r/example-form.json
+```
+
+## Usage
+
+<div className="my-4 p-4 border rounded-lg">
+  <ExampleFormExample />
+</div>
+
+This component demonstrates how to build a form with validation.
+
+### 1. Define the Schema
+
+Use `zod` to define the form schema.
+
+`src/registry/new-york/blocks/form/index.tsx` (excerpt):
+
+```ts
+import z from "zod";
+
+const productSchema = z.object({
+  name: z.string().min(1, "Product name is required"),
+  description: z.string().optional(),
+  sku: z.string().min(1, "SKU is required"),
+  price: z
+    .string()
+    .refine((val) => !isNaN(parseFloat(val)), "Price must be a number"),
+  categoryId: z.string().min(1, "Category is required"),
+  unit: z.string(),
+  weight: z.string().optional(),
+});
+```
+
+### 2. Create the Form Component
+
+Use `react-hook-form` and the shadcn/ui `Form` components to build the form.
+
+`src/registry/new-york/blocks/form/index.tsx` (excerpt):
+
+```tsx
+"use client";
+
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+
+// ... schema and other imports
+
+export default function ExampleForm() {
+  const form = useForm<z.infer<typeof productSchema>>({
+    resolver: zodResolver(productSchema),
+    defaultValues: {
+      name: "Example Product",
+      // ... other default values
+    },
+  });
+
+  const onSubmit = (values: z.infer<typeof productSchema>) => {
+    alert(JSON.stringify(values, null, 2));
+  };
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <FormField
+          control={form.control}
+          name="name"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Product Name *</FormLabel>
+              <FormControl>
+                <Input placeholder="Enter product name" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        {/* ... other form fields */}
+        <Button type="submit">Save Product</Button>
+      </form>
+    </Form>
+  );
+}
+```
+
+### 3. Use the Component
+
+```tsx
+import ExampleForm from "@/registry/new-york/blocks/form";
+
+export default function Page() {
+  return (
+    <div>
+      <h1 className="text-2xl font-bold mb-4">Create Product</h1>
+      <ExampleForm />
+    </div>
+  );
+}
+```

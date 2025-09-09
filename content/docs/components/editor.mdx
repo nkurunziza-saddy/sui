@@ -1,0 +1,69 @@
+---
+title: Editor
+description: A rich text editor based on Lexical, with support for markdown shortcuts, slash commands, and a floating toolbar.
+---
+
+import {
+  BasicEditorExample,
+  EditorWithToolbarExample,
+  ReadOnlyEditorExample,
+} from "@/components/examples/editor";
+
+A rich text editor based on Lexical, with support for markdown shortcuts, slash commands, and a floating toolbar.
+
+## Installation
+
+```bash
+npx shadcn@latest add https://acme.com/r/editor.json
+```
+
+## Usage
+
+### Basic Editor
+
+<div className="my-4 p-4 border rounded-lg">
+  <BasicEditorExample />
+</div>
+
+```tsx
+import { Editor } from "@/registry/new-york/blocks/editor";
+
+export function BasicEditorExample() {
+  return <Editor />;
+}
+```
+
+### With Toolbar
+
+Enable the toolbar for more formatting options.
+
+<div className="my-4 p-4 border rounded-lg">
+  <EditorWithToolbarExample />
+</div>
+
+```tsx
+import { Editor } from "@/registry/new-york/blocks/editor";
+
+export function EditorWithToolbarExample() {
+  return <Editor showToolbar={true} />;
+}
+```
+
+### Read-only Mode
+
+Display content in a read-only mode.
+
+<div className="my-4 p-4 border rounded-lg">
+  <ReadOnlyEditorExample />
+</div>
+
+```tsx
+import { Editor } from "@/registry/new-york/blocks/editor";
+
+const content =
+  '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"This is some read-only content.","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}';
+
+export function ReadOnlyEditorExample() {
+  return <Editor initialValue={content} readOnly={true} />;
+}
+```

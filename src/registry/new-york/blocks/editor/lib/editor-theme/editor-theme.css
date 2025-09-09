@@ -1,0 +1,129 @@
+@import "../../../../../../../src/app/global.css";
+
+/* Check Lists */
+.lexical-checklist-item {
+  @apply relative flex items-center gap-2 list-none outline-none;
+}
+
+.lexical-checklist-item::before {
+  content: "";
+  @apply flex-shrink-0 mt-0.5 size-4 rounded border border-border/50 bg-muted cursor-pointer;
+}
+
+.lexical-checklist-item:hover::before {
+  @apply border-border/70;
+}
+
+/* Indentation */
+.lexical-checklist-item--checked {
+  @apply text-muted-foreground relative;
+}
+
+.lexical-checklist-item--checked::before {
+  @apply bg-primary border-primary flex items-center justify-center;
+  content: "✓";
+  @apply text-primary-foreground text-sm font-medium;
+}
+
+.lexical-checklist-item--checked > span {
+  @apply line-through;
+}
+
+/* Code Blocks */
+.lexical-code-block {
+  @apply relative block bg-muted/50 rounded-lg overflow-x-auto my-4 text-sm leading-relaxed px-4 py-3 pl-14 font-mono border border-border;
+  tab-size: 2;
+}
+
+/* Horizontal Rule */
+.lexical-hr {
+  @apply my-4 border relative;
+}
+
+.lexical-hr:after {
+  content: "";
+  @apply block;
+}
+
+.lexical-hr-selected {
+  @apply outline-2 outline-primary rounded select-none;
+}
+
+/* Indentation */
+.lexical-indent {
+  --lexical-indent-base-value: 2rem;
+}
+
+/* Block Cursor */
+.lexical-block-cursor {
+  @apply block absolute pointer-events-none;
+}
+
+.lexical-block-cursor:after {
+  content: "";
+  @apply absolute block -top-0.5 w-5 border-t-2 border-foreground animate-[cursor-blink_1.1s_steps(2,start)_infinite];
+}
+
+@keyframes cursor-blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* Tab Node */
+.lexical-tab-node {
+  @apply relative inline-block no-underline;
+  width: 4ch;
+}
+
+/* Table Controls */
+.lexical-table-add-columns,
+.lexical-table-add-rows {
+  @apply absolute bg-editor-muted/70 hover:bg-editor-muted cursor-pointer border-0 rounded transition-all duration-200 opacity-0 hover:opacity-100;
+}
+
+.lexical-table-add-columns {
+  @apply h-full w-5 top-0 -right-5;
+}
+
+.lexical-table-add-rows {
+  @apply w-full h-5 left-0 -bottom-5;
+}
+
+.lexical-table-add-columns:after,
+.lexical-table-add-rows:after {
+  content: "+";
+  @apply absolute flex items-center justify-center w-full h-full text-editor-muted-foreground text-lg font-bold;
+}
+
+/* Table Styling */
+.lexical-table-cell {
+  @apply border border-editor-border/60 p-3 align-top text-left relative outline-none overflow-auto min-w-[7.5rem] bg-editor-background;
+}
+
+/* Selected table cell */
+.lexical-table-cell-selected {
+  @apply bg-editor-primary/10 outline-2 outline-editor-primary;
+}
+
+/* Table resizer */
+.lexical-table-cell-resizer {
+  @apply absolute right-0 top-0 h-full w-1 bg-transparent cursor-col-resize hover:bg-editor-primary/50 transition-colors duration-200;
+}
+
+/* Table scrollable wrapper */
+.lexical-table-scrollable-wrapper {
+  @apply overflow-x-auto border border-editor-border rounded-lg;
+}
+
+/* Selection styles */
+.lexical-table-selection {
+  @apply bg-editor-primary/10 border-2 border-editor-primary/50 rounded;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .lexical-table-cell {
+    @apply min-w-[5rem] p-2 text-sm;
+  }
+}

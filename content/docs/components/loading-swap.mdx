@@ -1,0 +1,45 @@
+---
+title: Loading Swap
+description: A utility component to swap content with a loading spinner.
+---
+
+import { LoadingSwapExample } from "@/components/examples/loading-swap";
+
+A utility component to swap content with a loading spinner.
+
+## Installation
+
+```bash
+npx shadcn@latest add https://acme.com/r/loading-swap.json
+```
+
+## Usage
+
+This component is useful for showing a loading state inside a button or any other container.
+
+<div className="my-4 p-4 border rounded-lg flex justify-center">
+  <LoadingSwapExample />
+</div>
+
+```tsx
+import { useState } from "react";
+import { LoadingSwap } from "@/registry/new-york/blocks/loading-swap";
+import { Button } from "@/components/ui/button";
+
+export function LoadingSwapExample() {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleClick = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  };
+
+  return (
+    <Button onClick={handleClick} disabled={isLoading}>
+      <LoadingSwap isLoading={isLoading}>Click me</LoadingSwap>
+    </Button>
+  );
+}
+```

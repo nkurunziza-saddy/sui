@@ -1,0 +1,267 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "acme",
+  "homepage": "https://acme.com",
+  "items": [
+    {
+      "name": "example-form",
+      "type": "registry:component",
+      "title": "Example Form",
+      "description": "A contact form with Zod validation.",
+      "dependencies": ["zod"],
+      "registryDependencies": ["button", "input", "label", "textarea", "card"],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/form/index.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "action-button",
+      "type": "registry:component",
+      "title": "Action Button",
+      "description": "A button that performs an action, with support for loading states and confirmation dialogs.",
+      "registryDependencies": ["button", "alert-dialog", "loading-swap"],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/action-button/index.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "editor",
+      "type": "registry:component",
+      "title": "Editor",
+      "description": "A rich text editor based on Lexical.",
+      "dependencies": [
+        "lexical",
+        "@lexical/react",
+        "@lexical/list",
+        "@lexical/code",
+        "@lexical/link",
+        "@lexical/table",
+        "@lexical/markdown",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu",
+        "input",
+        "label",
+        "dialog"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/editor/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/components/index.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/components/image-dialog.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/components/link-dialog.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/components/table-dialog.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/components/theme-toggler.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/components/toolbar-separator.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/lib/colors.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/lib/configs.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/lib/editor-theme/editor-theme.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/lib/editor-theme/index.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/lib/hooks/use-floating-toolbar.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/lib/nodes/image-node.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/lib/nodes/index.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/lib/types/editor.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/lib/utils/export.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/lib/utils/import.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/lib/utils/index.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/plugins/floating-toolbar/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/plugins/slash-command/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/plugins/slash-command/slash-command-items.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/plugins/slash-command/slash-command-menu-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/plugins/table-hover-actions/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/plugins/toolbar/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/plugins/toolbar/toolbar-items.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/align-buttons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/block-format-dropdown.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/block-type-buttons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/color-picker.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/file-actions.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/history-buttons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/insert-actions.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/list-buttons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/table-buttons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/text-format-buttons.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/editor/plugins/toolbar/extensions/toolbar-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "products-table",
+      "type": "registry:component",
+      "title": "Products Table",
+      "description": "A data table with sorting, filtering, pagination, and column visibility controls.",
+      "dependencies": ["@tanstack/react-table"],
+      "registryDependencies": [
+        "button",
+        "table",
+        "select",
+        "input",
+        "dropdown-menu",
+        "badge",
+        "command",
+        "popover",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/extensive-table/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/extensive-table/column.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/extensive-table/data-table.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/extensive-table/faceted-filter.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/extensive-table/pagination.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/extensive-table/search.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/extensive-table/toolbar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/extensive-table/view-options.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "loading-swap",
+      "type": "registry:component",
+      "title": "Loading Swap",
+      "description": "A utility component to swap content with a loading spinner.",
+      "files": [
+        {
+          "path": "registry/new-york/blocks/loading-swap/index.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}

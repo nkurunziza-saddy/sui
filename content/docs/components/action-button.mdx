@@ -1,0 +1,72 @@
+---
+title: Action Button
+description: A button that performs an action, with support for loading states and confirmation dialogs.
+---
+
+import {
+  ActionButtonExample,
+  ActionButtonWithConfirmationExample,
+} from "@/components/examples/action-button";
+
+A button that performs an action, with support for loading states and confirmation dialogs.
+
+## Installation
+
+```bash
+npx shadcn@latest add https://acme.com/r/action-button.json
+```
+
+## Usage
+
+### Basic Example
+
+This example shows a simple action button that simulates a network request.
+
+<div className="my-4 p-4 border rounded-lg flex justify-center">
+  <ActionButtonExample />
+</div>
+
+```tsx
+import { ActionButton } from "@/registry/new-york/blocks/action-button";
+
+export function ActionButtonExample() {
+  const handleAction = async () => {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // Here you would typically make an API call
+    console.log("Action completed!");
+    return { error: false };
+  };
+
+  return <ActionButton action={handleAction}>Perform Action</ActionButton>;
+}
+```
+
+### With Confirmation
+
+You can require a confirmation dialog before performing the action.
+
+<div className="my-4 p-4 border rounded-lg flex justify-center">
+  <ActionButtonWithConfirmationExample />
+</div>
+
+```tsx
+import { ActionButton } from "@/registry/new-york/blocks/action-button";
+
+export function ActionButtonWithConfirmationExample() {
+  const handleAction = async () => {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    console.log("Action completed!");
+    return { error: false };
+  };
+
+  return (
+    <ActionButton
+      action={handleAction}
+      requireAreYouSure
+      areYouSureDescription="This will perform a destructive action. Are you sure?"
+    >
+      Delete Item
+    </ActionButton>
+  );
+}
+```
