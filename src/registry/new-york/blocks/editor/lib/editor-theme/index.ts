@@ -1,5 +1,4 @@
 import type { EditorThemeClasses } from "lexical";
-import "./editor-theme.css";
 
 export const theme: EditorThemeClasses = {
   ltr: "text-left",
@@ -33,9 +32,10 @@ export const theme: EditorThemeClasses = {
     ol: "list-decimal list-outside my-2 ml-6 space-y-1",
     ul: "list-disc list-outside my-2 ml-6 space-y-1",
     listitem: "pl-2",
-    listitemChecked: "lexical-checklist-item lexical-checklist-item--checked",
+    listitemChecked:
+      "relative flex items-center gap-2 list-none outline-none text-muted-foreground before:content-[''] before:flex-shrink-0 before:mt-0.5 before:size-4 before:rounded before:border before:border-primary before:bg-primary before:cursor-pointer before:flex before:items-center before:justify-center before:[content:'✓'] before:text-primary-foreground before:text-sm before:font-medium [&>span]:line-through",
     listitemUnchecked:
-      "lexical-checklist-item lexical-checklist-item--unchecked",
+      "relative flex items-center gap-2 list-none outline-none before:content-[''] before:flex-shrink-0 before:mt-0.5 before:size-4 before:rounded before:border before:border-border/50 before:bg-muted before:cursor-pointer hover:before:border-border/70",
     checklist: "my-2 space-y-2",
   },
 
@@ -54,7 +54,7 @@ export const theme: EditorThemeClasses = {
     uppercase: "uppercase",
   },
 
-  code: "lexical-code-block",
+  code: "relative block bg-muted/50 rounded-lg overflow-x-auto my-4 text-sm leading-relaxed px-4 py-3 pl-14 font-mono border border-border",
   codeHighlight: {
     atrule: "text-blue-600 dark:text-blue-400",
     attr: "text-blue-600 dark:text-blue-400",
@@ -95,34 +95,44 @@ export const theme: EditorThemeClasses = {
 
   table:
     "border-collapse table-fixed w-full max-w-[80vw] my-4 border border-border rounded-lg overflow-hidden",
-  tableAddColumns: "lexical-table-add-columns",
-  tableAddRows: "lexical-table-add-rows",
+  tableAddColumns:
+    "absolute h-full w-5 top-0 -right-5 bg-editor-muted/70 hover:bg-editor-muted cursor-pointer border-0 rounded transition-all duration-200 opacity-0 hover:opacity-100 after:content-['+'] after:absolute after:flex after:items-center after:justify-center after:w-full after:h-full after:text-editor-muted-foreground after:text-lg after:font-bold",
+  tableAddRows:
+    "absolute w-full h-5 left-0 -bottom-5 bg-editor-muted/70 hover:bg-editor-muted cursor-pointer border-0 rounded transition-all duration-200 opacity-0 hover:opacity-100 after:content-['+'] after:absolute after:flex after:items-center after:justify-center after:w-full after:h-full after:text-editor-muted-foreground after:text-lg after:font-bold",
   tableAlignment: {
     center: "mx-auto",
     right: "ml-auto",
   },
-  tableCell: "lexical-table-cell",
-  tableCellActionButton: "lexical-table-cell-action-button",
-  tableCellActionButtonContainer: "lexical-table-cell-action-button-container",
-  tableCellHeader: "lexical-table-cell-header",
-  tableCellResizer: "lexical-table-cell-resizer",
-  tableCellSelected: "lexical-table-cell-selected",
-  tableFrozenColumn: "lexical-table-frozen-column",
-  tableFrozenRow: "lexical-table-frozen-row",
-  tableRowStriping: "lexical-table-row-striping",
-  tableScrollableWrapper: "overflow-x-auto my-0 mb-6",
+  tableCell:
+    "border border-editor-border/60 p-3 align-top text-left relative outline-none overflow-auto min-w-[7.5rem] bg-editor-background md:min-w-[5rem] md:p-2 md:text-sm",
+  tableCellActionButton:
+    "absolute top-0 right-0 z-10 w-6 h-6 bg-editor-background border border-editor-border rounded-bl hover:bg-editor-muted transition-colors duration-200 flex items-center justify-center text-xs text-editor-muted-foreground hover:text-editor-foreground cursor-pointer opacity-0 group-hover:opacity-100",
+  tableCellActionButtonContainer:
+    "absolute top-0 right-0 w-6 h-6 pointer-events-auto",
+  tableCellHeader:
+    "bg-editor-muted/30 font-semibold text-editor-foreground border-b-2 border-editor-border",
+  tableCellResizer:
+    "absolute right-0 top-0 h-full w-1 bg-transparent cursor-col-resize hover:bg-editor-primary/50 transition-colors duration-200",
+  tableCellSelected: "bg-editor-primary/10 outline-2 outline-editor-primary",
+  tableFrozenColumn:
+    "sticky left-0 z-20 bg-editor-background border-r-2 border-editor-border shadow-sm",
+  tableFrozenRow:
+    "sticky top-0 z-10 bg-editor-background border-b-2 border-editor-border shadow-sm",
+  tableRowStriping: "even:bg-editor-muted/20 odd:bg-editor-background",
+  tableScrollableWrapper:
+    "overflow-x-auto border border-editor-border rounded-lg my-0 mb-6",
   tableSelected: "outline-2 outline-editor-primary",
-  tableSelection: "lexical-table-selection",
+  tableSelection:
+    "bg-editor-primary/10 border-2 border-editor-primary/50 rounded",
 
-  hr: "lexical-hr",
-  hrSelected: "lexical-hr-selected",
-
-  indent: "lexical-indent",
+  hr: "my-4 border relative after:content-[''] after:block",
+  hrSelected: "outline-2 outline-primary rounded select-none",
 
   hashtag:
     "bg-blue-100/60 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-1 rounded-sm font-medium",
 
-  blockCursor: "lexical-block-cursor",
+  blockCursor:
+    "block absolute pointer-events-none after:content-[''] after:absolute after:block after:-top-0.5 after:w-5 after:border-t-2 after:border-foreground after:animate-[cursor-blink_1.1s_steps(2,start)_infinite]",
 
   characterLimit: "bg-red-200 dark:bg-red-900/50",
 
@@ -140,7 +150,7 @@ export const theme: EditorThemeClasses = {
 
   autocomplete: "text-editor-muted-foreground bg-muted/50 px-2 py-1 rounded",
 
-  tab: "lexical-tab-node",
+  tab: "relative inline-block no-underline w-[4ch]",
 
   specialText:
     "bg-yellow-300/60 dark:bg-yellow-900/40 text-yellow-900 dark:text-yellow-100 px-1 rounded font-medium",

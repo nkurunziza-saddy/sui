@@ -69,7 +69,7 @@ const initialState = {
   canRedo: false,
 };
 
-type ToolbarState = typeof initialState;
+export type ToolbarState = typeof initialState;
 type Action =
   | { type: "UPDATE"; payload: Partial<ToolbarState> }
   | { type: "SET_CAN_UNDO"; payload: boolean }

@@ -48,7 +48,7 @@ function EditorContent({
             className={`
               p-6 md:p-8 
               outline-none 
-              prose prose-lg max-w-none 
+              max-w-none 
               transition-all duration-300
               ${className}
             `}
@@ -119,7 +119,7 @@ export function Editor({
   onChange,
   plugins = [],
 }: EditorProps) {
-  const [_, setEditorState] = useState<string>(initialValue);
+  const [, setEditorState] = useState<string>(initialValue);
 
   const initialConfig = {
     ...EDITOR_CONFIG,
